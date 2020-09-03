@@ -10,9 +10,9 @@ import { Product } from '../product.model';
   styleUrls: ['./product-create.component.css'],
 })
 export class ProductCreateComponent implements OnInit {
-  productTest: Product = {
-    name: 'Produto Test',
-    price: 125.98
+  product: Product = {
+    name: '',
+    price: null
   }
 
   constructor(private productService: ProductService, private router: Router) {
@@ -22,8 +22,9 @@ export class ProductCreateComponent implements OnInit {
   }
 
   createProduct(): void {
-    this.productService.create(this.productTest).subscribe(() => {
+    this.productService.create(this.product).subscribe(() => {
       this.productService.showMessage('Produto criado')
+      this.router.navigate(['/products'])
     })
   }
 
