@@ -10,7 +10,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductService {
-  baseUrl = "http://localhost:3001/products"
+  baseUrl = "http://localhost:3333/items"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {
   }
@@ -47,7 +47,7 @@ export class ProductService {
   }
 
   update(product: Product): Observable<Product> {
-    const url = `${ this.baseUrl }/${ product.id }`
+    const url = `${ this.baseUrl }/${ product._id }`
     return this.http.put<Product>(url, product).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))

@@ -13,13 +13,13 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./product-read.component.css']
 })
 export class ProductReadComponent implements OnInit {
-  products: Product[]
+  products: Product[] = []
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatTable) table: MatTable<Product>;
   dataSource: ProductReadDataSource
-  displayedColumns = ['id', 'name', 'price', 'action'];
+  displayedColumns = ['name', 'price', 'action'];
 
   constructor(private productService: ProductService) {
 
@@ -30,7 +30,6 @@ export class ProductReadComponent implements OnInit {
     this.productService.read().subscribe((response) => {
       this.products = response
       this.dataSource.data = response
-      console.log(response)
     })
 
   }
