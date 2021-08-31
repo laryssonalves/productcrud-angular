@@ -37,3 +37,5 @@ Made by Larysson Alves :wave: [Get in touch!](https://www.linkedin.com/in/laryss
 
 [angular]: https://angular.io/
 [material]: https://material.angular.io/
+[nodejs]: https://nodejs.org/
+[npm]: https://www.npmjs.com/
